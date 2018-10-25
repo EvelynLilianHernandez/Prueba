@@ -1,0 +1,45 @@
+
+<div *ngIf="!email; else forminfo">
+    <form [formGroup]="rForm" (ngSubmit)="addPost(rForm.value)">
+     <div class="form-container">
+      <h1>LOGIN</h1>
+      <hr>
+        <br>   <div class="row columns">
+          
+          <div><label>Email: 
+            <input type="text" formControlName="email" name="email" class="form-control">
+            <div class="alert" *ngIf="!rForm.controls['email'].valid && rForm.controls['email'].touched">{{ titleAlert }}</div>
+          </label>
+ <br>
+          <label>Password: 
+            <textarea formControlName="password" name="password" class="form-control"></textarea>
+            <div class="alert" *ngIf="!rForm.controls['password'].valid && rForm.controls['password'].touched">{{ titleAlert }}</div>
+ 
+          </label>
+  
+         <!--  <label for="validate">Listo</label>
+          <input type="checkbox" name="validate" formControlName="validate" value="1"> On
+          -->
+         
+          <br><input type="submit" class="btn btn-outline-success" value="Submit Form" [disabled]="!rForm.valid">
+          
+          <br> <br>
+          <div class="alert alert-success" role="alert">
+              <h4>Usuario logueado!</h4>
+             
+            </div>
+        </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  
+  <ng-template #forminfo>
+    <div class="form-container">
+      <div class="row columns">
+          <h1> Entró al FORMINFO</h1>
+          
+      </div>
+    </div>
+  </ng-template>
