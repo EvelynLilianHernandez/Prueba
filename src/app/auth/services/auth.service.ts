@@ -14,7 +14,8 @@ export class AuthService {
 
   login(params){
     const url = this.base+ '/' + environment.api.auth.login; 
-    console.log(params);
     return this.http.post(url, params);
   }
 }
+
+

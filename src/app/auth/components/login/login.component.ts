@@ -21,7 +21,6 @@ export class LoginComponent {
     this.rForm = fb.group({
       'email' : ['', Validators.required],
       'password' : ['', Validators.compose([Validators.required, Validators.minLength(1), Validators.maxLength(500)])],
-/*       'validate' : '' */
     });
   
   
@@ -34,7 +33,7 @@ export class LoginComponent {
       password: post.password
     }
     this.authService.login(login).subscribe(response => {
-      console.log(response);
+      localStorage.setItem('token', response['data'].token)
     })
   }
   

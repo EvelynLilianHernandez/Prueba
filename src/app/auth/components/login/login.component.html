@@ -12,7 +12,7 @@
           </label>
  <br>
           <label>Password: 
-            <textarea formControlName="password" name="password" class="form-control"></textarea>
+            <input formControlName="password" type="password" name="password" class="form-control">
             <div class="alert" *ngIf="!rForm.controls['password'].valid && rForm.controls['password'].touched">{{ titleAlert }}</div>
  
           </label>
@@ -21,14 +21,15 @@
           <input type="checkbox" name="validate" formControlName="validate" value="1"> On
           -->
          
-          <br><input type="submit" class="btn btn-outline-success" value="Submit Form" [disabled]="!rForm.valid">
+          <br><input type="submit" class="btn btn-outline-success" name="buttonEnviar" value="Enviar Formulario" [disabled]="!rForm.valid">
           
-          <br> <br>
+          <br> <br>  
           <div class="alert alert-success" role="alert">
               <h4>Usuario logueado!</h4>
-             
+          
             </div>
         </div>
+  
         </div>
       </div>
     </form>

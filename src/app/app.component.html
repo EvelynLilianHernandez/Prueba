@@ -1,1 +1,21 @@
-<router-outlet></router-outlet>
+<nav class="navbar navbar-expand-sm bg-light">
+    <div class="container-fluid">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+            <a routerLink="app-login" class="nav-link" routerLinkActive="app-login">
+              Login
+            </a>
+          </li>  
+          <li class="nav-item">
+            <a routerLink="auth" class="nav-link" routerLinkActive="auth">
+              Auth
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </nav>
+  
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
