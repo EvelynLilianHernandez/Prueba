@@ -1,66 +1,68 @@
 <div class="card">
   <div class="card-body">
-    <div *ngIf="!email; else forminfo">
+    <!-- <div *ngIf="!email; else forminfo"> -->
       <form [formGroup]="formAdd" (ngSubmit)="addPost(formAdd.value)">
-       <div class="form-container">
-        <h1>Agregar Cuenta </h1>
-        <hr>
-          <br>   <div class="row columns">
-               
-    <br><div><label>Nombre: 
-      <input formControlName="nombre" name="password" class="form-control">
-      <div class="alert" *ngIf="!formAdd.controls['password'].valid && formAdd.controls['password'].touched">{{ titleAlert }}</div>
-
-    </label>
-   
-    <br><label>Apellido: 
-      <input formControlName="apellido" name="apellido" class="form-control">
-      <div class="alert" *ngIf="!formAdd.controls['password'].valid && formAdd.controls['password'].touched">{{ titleAlert }}</div>
-
-    </label>
-   
-    <br><label>DNI: 
-      <input formControlName="dni" name="dni" class="form-control">
-      <div class="alert" *ngIf="!formAdd.controls['password'].valid && formAdd.controls['password'].touched">{{ titleAlert }}</div>
-
-    </label>
-   
-    <br>
+        <div class="form-container">
+          <h1>Nuevo Usuario </h1>
+          <hr>
+          <br>   
+          <div class="row columns">
+            
+            <br>
+            <label>Nombre: 
+              <input formControlName="firstName" name="firstName" class="form-control">
+              <div class="alert" *ngIf="!formAdd.controls['firstName'].valid && formAdd.controls['firstName'].touched">{{ titleAlert }}</div>
+            </label>
+            
+            <br>
+            <label>Apellido: 
+              <input formControlName="lastName" name="lastName" class="form-control">
+              <div class="alert" *ngIf="!formAdd.controls['lastName'].valid && formAdd.controls['lastName'].touched">{{ titleAlert }}</div>
+              
+            </label>
+            
+            <br>
             <label>Email: 
               <input type="text" formControlName="email" name="email" class="form-control">
               <div class="alert" *ngIf="!formAdd.controls['email'].valid && formAdd.controls['email'].touched">{{ titleAlert }}</div>
             </label>
-    <br>
-    <label>Password: 
-      <input formControlName="password" type="password" name="password" class="form-control">
-      <div class="alert" *ngIf="!formAdd.controls['password'].valid && formAdd.controls['password'].touched">{{ titleAlert }}</div>
-<br>
-    </label><input type="submit" class="btn btn-outline-success" name="buttonEnviar" value="Enviar Formulario" [disabled]="!formAdd.valid">
+            <br>
+            <label>Password: 
+              <input formControlName="password" type="password" name="password" class="form-control">
+              <div class="alert" *ngIf="!formAdd.controls['password'].valid && formAdd.controls['password'].touched">{{ titleAlert }}</div>
+              <br>
+              <br>
+            </label>
+            <label>Rol: 
+              <input formControlName="role" type="role" name="role" class="form-control">
+              <div class="alert" *ngIf="!formAdd.controls['role'].valid && formAdd.controls['role'].touched">{{ titleAlert }}</div>
+              <br>
+            </label>
+            <input type="submit" class="btn btn-outline-success" name="buttonEnviar" value="Enviar Formulario" [disabled]="!formAdd.valid">
             
-            <br> <br>  
-            </div> 
-          </div>
+              <br> 
+          </div>  
         </div>
-      </form>
-    </div>
+    </form>
+  </div>
+</div>
     
     
-    <ng-template #forminfo>
+    <!-- <ng-template #forminfo>
       <div class="form-container">
         <div class="row columns">
-            <h1> Entró al FORMINFO</h1>
-            
+          <h1> Entró al FORMINFO</h1>
+          
         </div>
       </div>
-    </ng-template>
+    </ng-template> -->
     
     
     
-    
-</div>
-
-
-
-
-
-
+  
+  
+  
+  
+  
+  
+  

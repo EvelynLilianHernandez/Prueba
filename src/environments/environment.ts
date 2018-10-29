@@ -9,6 +9,9 @@ export const environment = {
     auth:{
       base: 'auth',
       login: 'login'
+    },
+    user:{
+      base: '/users'
     }
   }
 };
