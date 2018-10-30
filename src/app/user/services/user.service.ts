@@ -1,17 +1,21 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { User } from '../user';
 
-//TODO ESTO NO SE SI ESTA BIEN 
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
   base: string;
-  
+  token: string;
+  header: any;
+
   constructor(private http: HttpClient) { 
     this.base = environment.api.apiUrl + environment.api.user.base;
+    this.token = localStorage.getItem('token');
+    this.header = new HttpHeaders({'Content-Type':'application/json','X-API-Key': this.token});
   }
 
 
@@ -21,10 +25,11 @@ export class UserService {
 
   getAll(){
     const url = this.base; 
-    return this.http.get(url);
+    return this.http.get(url,{headers:this.header});
   }
 
   getOne(id){
+    
     const url = this.base + '/' + id; 
     return this.http.get(url);
   }

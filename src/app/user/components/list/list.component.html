@@ -1,3 +1,11 @@
-<p>
-  list works!
-</p>
+  <table>
+    <ul>
+    <li *ngFor="let u of users; let i = index">
+            
+     <td>{{ u.firstName }}</td>
+     <td>{{ u.lastName }}</td>
+     <td><button type="button" class="btn btn-info" (click)="onEdit(i)">Edit</button></td>
+     <td><button type="button" class="btn btn-danger" (click)="onDelete(i)">Delete</button></td>
+    </li>
+  </ul>
+  </table>

@@ -8,23 +8,31 @@ import { User } from '../../user';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
-
+  public users:User[] = [];
   constructor( private userService: UserService) { }
 
   ngOnInit() {   //dentro del ngOnInit se obtiene datos por medio de un servicio para utilizarlos dentro del componente
     this.getAllUsers();
+  
   }
-
-  public users:User[];
-
+  
   getAllUsers(){
 
     this.userService.getAll()
-    .subscribe(response => {
-      console.log(response)
+      .subscribe(response => {
+        this.users = response['data'].users;
     })
   }
-//OBSERVABLE???? comunica con el servidor? como lo uso?
 
 
+  onEdit(index:number){
+
+    
+    
+  }
+
+  onDelete(index:number)
+  {
+
+  }
 }
