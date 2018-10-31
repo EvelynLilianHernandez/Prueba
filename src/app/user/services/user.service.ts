@@ -28,10 +28,15 @@ export class UserService {
     return this.http.get(url,{headers:this.header});
   }
 
+  editUser(id, entity){
+    const url = `${this.base}/${id}`; 
+    return this.http.put(url,entity,{headers:this.header});
+  }
+
   getOne(id){
     
     const url = this.base + '/' + id; 
-    return this.http.get(url);
+    return this.http.get(url,{headers:this.header});
   }
 }
 

@@ -4,8 +4,8 @@
             
      <td>{{ u.firstName }}</td>
      <td>{{ u.lastName }}</td>
-     <td><button type="button" class="btn btn-info" (click)="onEdit(i)">Edit</button></td>
-     <td><button type="button" class="btn btn-danger" (click)="onDelete(i)">Delete</button></td>
+     <td><button type="button" class="btn btn-info" (click)="onEdit(u._id)">Edit</button></td>
+     <td><button type="button" class="btn btn-danger" (click)="onDelete(u._id)">Delete</button></td>
     </li>
   </ul>
   </table>
