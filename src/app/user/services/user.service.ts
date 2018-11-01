@@ -34,9 +34,23 @@ export class UserService {
   }
 
   getOne(id){
-    
     const url = this.base + '/' + id; 
     return this.http.get(url,{headers:this.header});
+  }
+
+  getUserByEmail(email){
+    const url = this.base + '/' + email; 
+    return this.http.get(url,{headers:this.header});
+  }
+
+  getUserById(id){
+    const url = this.base + '/' + id; 
+    return this.http.get(url,{headers:this.header});
+  }
+
+  deleteUser(id){
+    const url = this.base + '/' + id; 
+    return this.http.delete(url,{headers:this.header});
   }
 }
 

@@ -13,7 +13,13 @@ const routes: Routes = [
   },
   {
     path:'list', component:ListComponent
-  }
+  },
+  {
+    path:'getUserByEmail/:Email', component:ListComponent
+  },
+  /* {
+    path:'clear/:id', component:ClearComponent
+  } */
 ];
 
 @NgModule({

@@ -39,6 +39,9 @@ export class ListComponent implements OnInit {
 
   onDelete(index:number)
   {
-
-  }
+/*     this.router.navigate(['/user/clear', index]);
+ */
+    this.userService.deleteUser(index);
+    this.router.navigate(['/user/list']);
+}
 }
