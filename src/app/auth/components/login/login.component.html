@@ -7,12 +7,12 @@
         <br>   <div class="row columns">
           
           <div><label>Email: 
-            <input type="text" formControlName="email" name="email" class="form-control">
+            <input type="text" formControlName="email" name="email" class="form-control" placeholder="email">
             <div class="alert" *ngIf="!rForm.controls['email'].valid && rForm.controls['email'].touched">{{ titleAlert }}</div>
           </label>
  <br>
           <label>Password: 
-            <input formControlName="password" type="password" name="password" class="form-control">
+            <input formControlName="password" type="password" name="password" class="form-control" placeholder="password">
             <div class="alert" *ngIf="!rForm.controls['password'].valid && rForm.controls['password'].touched">{{ titleAlert }}</div>
  
           </label>
