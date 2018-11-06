@@ -7,6 +7,7 @@ import { UserService } from './services/user.service';
 import { AddComponent } from './components/add/add.component';
 import { EditComponent } from './components/edit/edit.component';
 import { ListComponent } from './components/list/list.component';
+import { FormComponent } from './components/form/form.component';
 
 @NgModule({
   imports: [
@@ -15,7 +16,7 @@ import { ListComponent } from './components/list/list.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  declarations: [AddComponent, EditComponent, ListComponent],
+  declarations: [AddComponent, EditComponent, ListComponent, FormComponent],
   providers:[UserService]
 })
 export class UserModule { }

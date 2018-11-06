@@ -33,6 +33,7 @@ export class ListComponent implements OnInit {
 
 
     this.router.navigate(['/user/edit', index]);
+    this.router.navigate(['/user/list']);
 
   }
 
@@ -41,6 +42,7 @@ export class ListComponent implements OnInit {
     */
     this.userService.deleteUser(index);
     this.router.navigate(['/user/list']);
+
   }
 
 
@@ -53,6 +55,11 @@ export class ListComponent implements OnInit {
 
     // const index = this.users.find(item => item.email === valorIngresado)
     // this.users[index]
+
+
+    if (valorIngresado === (event.key === 'blackspace')) {
+      return false;
+    }
 
     if (valorIngresado === '') {
       this.getAllUsers();
