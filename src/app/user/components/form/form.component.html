@@ -2,7 +2,6 @@
   <div class="card-body">
     <form [formGroup]="formUser" (ngSubmit)="onSubmit()">
 
-
       <div class="form-container">
         <hr>
         <br>
@@ -11,8 +10,7 @@
           <br>
           <label>Nombre:
             <input formControlName="firstName" name="firstName" class="form-control">
-            <div class="alert" *ngIf="!formUser.controls['
-        firstName'].valid && formUser.controls['firstName'].touched">{{titleAlert
+            <div class="alert" *ngIf="!formUser.controls['firstName'].valid && formUser.controls['firstName'].touched">{{titleAlert
               }}
             </div>
           </label>
@@ -45,7 +43,7 @@
               }}</div>
             <br>
           </label>
-          <input type="submit" class="btn btn-outline-success" name="buttonEnviar" value="Modificar" [disabled]="!formUser.valid">
+          <input type="submit" class="btn btn-outline-success" value="Aceptar" [disabled]="!formUser.valid">
 
           <br>
         </div>

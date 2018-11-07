@@ -10,15 +10,11 @@ import { UserService } from '../../services/user.service';
 })
 export class AddComponent {
 
-  formAdd: FormGroup;
-  titleAlert = 'Verifique el campo requerido';
-
   constructor(private fb: FormBuilder,
     private userService: UserService) {
   }
 
-  addPost(user) {
-    // var user = new User(post.firstName, post.lastName,post.email,post.password,post.password)
+  post(user) {
 
     this.userService.addUser(user).subscribe(
       response => {

@@ -1,1 +1,4 @@
-<app-form (sendData)="post($event)"></app-form>
+<h2>Ingrese los datos a modificar</h2>
+<hr>
+
+<app-form [currentUser]="user" (sendData)="post($event)"></app-form>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { UserService } from '../../services/user.service';
 import { User } from '../../user';
@@ -11,26 +11,25 @@ import { IfStmt } from '@angular/compiler';
   styleUrls: ['./edit.component.scss']
 })
 export class EditComponent {
-  formEdit: FormGroup;
-  titleAlert = 'Verifique el campo requerido';
+
   idUser: string;
   user: User;
   constructor(private fb: FormBuilder,
     private userService: UserService,
     private route: ActivatedRoute) {
-    this.idUser = this.route.snapshot.paramMap.get('id');   // paramMap toma el parámetro de ruta, snapshot puede usarse o no pero en el caso de hacerlo hay que tener cuidado al reutilizar componentes
+    this.idUser = this.route.snapshot.paramMap.get('id');
   }
 
   ngOnInit() {
     this.userService.getOne(this.idUser).subscribe(response => {
       this.user = new User(response['data'].user);
-      this.formEdit.patchValue(this.user);   // setValue asigna el valor en TODOS los controles del formulario, patchValue solo algunos
+      // this.formUser.patchValue(this.user);
     });
   }
 
-  addPost(user) {
-    const formValue = this.formEdit.value;
-    this.userService.editUser(this.idUser, formValue).subscribe(response => {
+  post(user) {   // se recibe el user mediante el (sendData)
+
+    this.userService.editUser(this.idUser, user).subscribe(response => {
       console.log(response);
     });
   }

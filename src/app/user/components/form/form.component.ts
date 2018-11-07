@@ -2,6 +2,7 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { UserService } from '../../services/user.service';
 import { User } from '../../user';
+import { formValue } from 'selenium-webdriver/http';
 
 @Component({
   selector: 'app-form',
@@ -27,15 +28,21 @@ export class FormComponent {
     });
   }
 
-  onSubmit(post) {
-    // var user = new User(post.firstName, post.lastName,post.email,post.password,post.password)
+  ngOnChanges() { // se llama cuando cambia alguna propiedad de este formulario
+    if (this.currentUser) {   // si el formulario tiene algo
+      this.formUser.patchValue(this.currentUser);   // machea el formulario con los datos del usuario (currentUser pasa a tener los datos del usuario porque se pasa mediante [currentUser]="user" en el edit.html)
+    }
+  }
+
+  onSubmit() {  // cuando se envia el formulario se cargan los valores con los datos del html (formValue), y se emite el user mediante (sendData) y se vincula con el "formValue($event)" pasandole el user en el edit.html
+    const formValue = this.formUser.value;
     if (this.formUser.valid) {
       const user: User = {
-        firstName: post.firstName,
-        lastName: post.lastName,
-        email: post.email,
-        role: post.role,
-        password: post.password,
+        firstName: formValue.firstName,
+        lastName: formValue.lastName,
+        email: formValue.email,
+        role: formValue.role,
+        password: formValue.password,
       };
       this.sendData.emit(user);
     }
